@@ -5,12 +5,9 @@ const Page = () => {
     const router = useRouter()
 
     const { id } = router.query
-    const [a,b,c] = id
-
-    console.log(router.query)
 
     return (
-    <h1>Note {b}</h1>
+    <h1>Note {id}</h1>
     )
 }
 
