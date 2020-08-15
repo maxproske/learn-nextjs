@@ -1,10 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
 
-const Page = () => {
+export default ({ content }) => {
   return (
     <div>
-      <h1>Hello, world!</h1>
+      <h1>{content.title}</h1>
+      <h2>{content.subtitle}</h2>
       <Link href="/notes">
         <a>Notes</a>
       </Link>
@@ -12,4 +13,13 @@ const Page = () => {
   )
 }
 
-export default Page
+export async function getStaticProps() {
+  return {
+    props: {
+      content: {
+        title: 'Look at my note app tho',
+        subtitle: `It's stupid fast`,
+      },
+    },
+  }
+}
